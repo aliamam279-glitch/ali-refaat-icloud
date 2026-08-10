@@ -1,184 +1,233 @@
 ﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="theme-color" content="#05070d">
-    <meta name="color-scheme" content="dark">
+
+    <meta name="description"
+          content="Ali Refaat iCloud - علي رفعت، فني سوفت وير ومبرمج، متخصص في خدمات السوفت وير وتطوير المواقع والأنظمة والحلول التقنية للموبايلات والكمبيوتر.">
 
     <meta name="author" content="Ali Refaat iCloud">
 
-    <meta name="description"
-          content="Ali Refaat iCloud - Software Technician & Developer. خدمات السوفت وير والدعم الفني وتطوير الأدوات والسيرفرات والمواقع والأنظمة البرمجية.">
-
-    <meta name="keywords"
-          content="Ali Refaat iCloud, علي رفعت ايكلود, Software Technician, Software Developer, iPhone, Android, Windows, C#, Python, ASP.NET Core, SQL, API">
-
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
-
     <title>Ali Refaat iCloud | Software Technician & Developer</title>
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Ali Refaat iCloud | Software Technician & Developer">
-    <meta property="og:description"
-          content="Software Technician • Developer • Support">
-    <meta property="og:image" content="images/انا.jpg">
-    <meta property="og:locale" content="ar_EG">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ali Refaat iCloud">
-    <meta name="twitter:description"
-          content="Software Technician & Developer">
-    <meta name="twitter:image" content="images/انا.jpg">
-
-    <!-- Google Fonts -->
+    <!-- Cairo Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
           rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="images/انا.jpg">
 </head>
 
 <body>
 
-    <!-- =========================
-         BACKGROUND
-    ========================== -->
+    <!-- =========================================================
+    BACKGROUND
+    ========================================================= -->
 
-    <div class="background">
+    <div class="background" aria-hidden="true">
         <div class="grid"></div>
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
     </div>
 
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
+    <!-- =========================================================
+    NAVBAR
+    ========================================================= -->
 
-    <header class="navbar" id="navbar">
+    <header class="navbar">
 
         <a href="#home"
            class="logo"
            aria-label="Ali Refaat iCloud">
-            Ali <span>Refaat</span> iCloud
+
+            <span dir="ltr">Ali</span>
+            <span dir="ltr">Refaat iCloud</span>
+
         </a>
 
-        <nav id="mainNav" aria-label="القائمة الرئيسية">
+        <nav aria-label="القائمة الرئيسية">
 
-            <a href="#home">الرئيسية</a>
+            <a href="#home">
+                الرئيسية
+            </a>
 
-            <a href="#about">عني</a>
+            <a href="#about">
+                عني
+            </a>
 
-            <a href="#services">الخدمات</a>
+            <a href="#services">
+                الخدمات
+            </a>
 
-            <a href="#projects">الأعمال</a>
+            <a href="#projects">
+                أعمالي
+            </a>
 
-            <a href="#skills">التقنيات</a>
+            <a href="#skills">
+                مهاراتي
+            </a>
 
-            <a href="#contact">تواصل</a>
+            <a href="#contact">
+                تواصل معي
+            </a>
 
         </nav>
+
+
+        <!-- Mobile Menu -->
+
+        <button type="button"
+                class="menu-toggle"
+                aria-label="فتح القائمة"
+                aria-expanded="false">
+
+            ☰
+
+        </button>
+
 
         <a class="nav-btn"
            href="https://wa.me/201027573851"
            target="_blank"
            rel="noopener noreferrer">
-            تواصل معي
-        </a>
 
-        <button class="menu-toggle"
-                id="menuToggle"
-                type="button"
-                aria-label="فتح القائمة"
-                aria-expanded="false">
-            ☰
-        </button>
+            تواصل معي
+
+        </a>
 
     </header>
 
 
-    <!-- =========================
-         MAIN
-    ========================== -->
+    <!-- =========================================================
+    MAIN
+    ========================================================= -->
 
-    <main id="home">
+    <main>
 
 
-        <!-- =========================
-             HERO
-        ========================== -->
+        <!-- =========================================================
+        HERO
+        ========================================================= -->
 
-        <section class="hero">
+        <section id="home"
+                 class="hero">
 
             <div class="hero-content">
 
-                <span class="badge">
-                    <span class="pulse-dot"></span>
-                    متاح للدعم والتواصل
-                </span>
+                <div class="badge">
 
-                <h1>
+                    متاح للعمل والتعاون
+
+                </div>
+
+
+                <h1 dir="ltr">
+
                     Ali
                     <span>Refaat iCloud</span>
+
                 </h1>
 
+
                 <h2>
-                    Software Technician & Developer
+
+                    فني سوفت وير ومبرمج
+                    <br>
+                    وصاحب حلول تقنية متكاملة
+
                 </h2>
 
+
                 <p>
-                    أقدم حلول السوفت وير للهواتف وأجهزة الكمبيوتر،
-                    وأعمل على تطوير الأدوات والسيرفرات والأنظمة
-                    البرمجية مع الاهتمام بالأداء وتجربة المستخدم.
+
+                    أنا <strong>علي رفعت</strong>، عمري
+                    <span dir="ltr">15</span> سنة، مهتم بمجال البرمجة
+                    والسوفت وير وتطوير الأنظمة والمواقع، وبشتغل على
+                    حلول وخدمات تقنية للموبايلات والكمبيوتر.
+
                 </p>
+
+
+                <!-- HERO BUTTONS -->
 
                 <div class="hero-buttons">
 
-                    <a class="btn primary"
-                       href="https://wa.me/201027573851"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        💬 تواصل عبر واتساب
+                    <a href="#projects"
+                       class="btn primary">
+
+                        مشاهدة أعمالي
+
                     </a>
 
-                    <a class="btn secondary"
-                       href="#services">
-                        اكتشف خدماتي
+
+                    <a href="https://wa.me/201027573851"
+                       class="btn secondary"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        تواصل واتساب
+
                     </a>
 
                 </div>
 
 
-                <!-- STATS -->
+                <!-- =================================================
+                STATS
+                ================================================== -->
 
                 <div class="stats">
 
-                    <div class="stat-item">
-                        <strong>150+</strong>
-                        <span>جهاز تم التعامل معه</span>
+                    <div>
+
+                        <strong>15</strong>
+
+                        <span>
+                            سنة من العمر
+                        </span>
+
                     </div>
 
-                    <div class="stat-item">
+
+                    <div>
+
+                        <strong>20+</strong>
+
+                        <span>
+                            مهارة تقنية
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>10+</strong>
+
+                        <span>
+                            مشاريع وتجارب
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
                         <strong>24/7</strong>
-                        <span>دعم ومتابعة</span>
-                    </div>
 
-                    <div class="stat-item">
-                        <strong>3+</strong>
-                        <span>أدوات قيد التطوير</span>
+                        <span>
+                            دعم وتواصل
+                        </span>
+
                     </div>
 
                 </div>
@@ -186,122 +235,79 @@
             </div>
 
 
-            <!-- HERO CARD -->
+            <!-- =====================================================
+            HERO CARD
+            ====================================================== -->
 
-            <div class="hero-card"
-                 aria-label="System information">
+            <div class="hero-card">
 
                 <div class="card-top">
+
                     <span class="status"></span>
-                    SYSTEM ONLINE
+
+                    <span dir="ltr">
+                        Ali Refaat iCloud • Developer
+                    </span>
+
                 </div>
+
 
                 <div class="code-window">
 
-                    <p>
-                        <span>developer</span>:
-                        "Ali Refaat"
+                    <p dir="ltr">
+
+                        <span>const</span>
+                        developer = "Ali Refaat";
+
                     </p>
 
-                    <p>
-                        <span>specialization</span>:
-                        "Software & Development"
+
+                    <p dir="ltr">
+
+                        age =
+                        <span>15</span>;
+
                     </p>
 
-                    <p>
-                        <span>support</span>:
-                        "24/7"
+
+                    <p dir="ltr">
+
+                        role =
+                        "Software Technician";
+
                     </p>
 
-                    <p>
-                        <span>services</span>:
-                        "Software / Web / API"
+
+                    <p dir="ltr">
+
+                        brand =
+                        "Ali Refaat iCloud";
+
                     </p>
 
-                    <p>
-                        <span>status</span>:
-                        "Building The Future 🚀"
+
+                    <p dir="ltr">
+
+                        skills =
+                        ["C#", "Python", "ASP.NET"];
+
                     </p>
 
-                </div>
 
-                <div class="terminal-line">
-                    <span>></span>
-                    Ready to work...
-                    <span class="cursor">_</span>
-                </div>
+                    <p dir="ltr">
 
-            </div>
+                        passion =
+                        "Software & Technology";
 
-        </section>
-
-
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
-        <section class="section" id="about">
-
-            <div class="section-title">
-                <span>01</span>
-                <h2>من أنا؟</h2>
-            </div>
-
-            <div class="about-box about-profile">
-
-                <div class="about-image">
-
-                    <img src="images/انا.jpg"
-                         alt="Ali Refaat iCloud"
-                         loading="lazy">
-
-                </div>
-
-                <div class="about-content">
-
-                    <span class="about-label">
-                        SOFTWARE TECHNICIAN & DEVELOPER
-                    </span>
-
-                    <h3>
-                        Ali Refaat iCloud
-                    </h3>
-
-                    <p>
-                        أعمل في مجال السوفت وير وتطوير البرمجيات
-                        وحلول مشاكل الأجهزة، بالإضافة إلى تطوير
-                        الأدوات والسيرفرات والأنظمة البرمجية.
                     </p>
 
-                    <p>
-                        أعمل باستخدام C# وPython وHTML وCSS
-                        وJavaScript وASP.NET Core، مع التركيز
-                        على بناء حلول عملية وسهلة الاستخدام.
+
+                    <p dir="ltr">
+
+                        status =
+                        "Building The Future 🚀";
+
                     </p>
-
-                    <div class="about-tags">
-
-                        <span>Software</span>
-                        <span>Development</span>
-                        <span>Support</span>
-                        <span>Servers</span>
-                        <span>API</span>
-
-                    </div>
-
-                    <div class="about-actions">
-
-                        <a class="btn primary"
-                           href="#contact">
-                            تواصل معي
-                        </a>
-
-                        <a class="btn secondary"
-                           href="#projects">
-                            مشاهدة الأعمال
-                        </a>
-
-                    </div>
 
                 </div>
 
@@ -310,261 +316,340 @@
         </section>
 
 
-        <!-- =========================
-             SERVICES
-        ========================== -->
 
-        <section class="section" id="services">
+        <!-- =========================================================
+        ABOUT
+        ========================================================= -->
+
+        <section id="about"
+                 class="section">
 
             <div class="section-title">
-                <span>02</span>
-                <h2>خدماتي</h2>
+
+                <span>
+                    01
+                </span>
+
+                <h2>
+                    مين هو Ali Refaat؟
+                </h2>
+
             </div>
 
-            <p class="section-description">
-                مجموعة من الخدمات التقنية والبرمجية التي أعمل
-                عليها في مجال السوفت وير والتطوير والدعم الفني.
-            </p>
+
+            <div class="about-box">
+
+                <div class="about-profile">
+
+
+                    <!-- =================================================
+                    PROFILE IMAGE
+                    ================================================== -->
+
+                    <div class="about-image">
+
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+                             alt="Ali Refaat iCloud - Software Developer"
+                             loading="lazy">
+
+                    </div>
+
+
+                    <!-- =================================================
+                    ABOUT CONTENT
+                    ================================================== -->
+
+                    <div class="about-content">
+
+                        <span class="about-label">
+
+                            ABOUT ME
+
+                        </span>
+
+
+                        <h3>
+
+                            <span dir="ltr">
+                                Ali Refaat
+                            </span>
+
+                            —
+
+                            <span dir="ltr">
+                                15
+                            </span>
+
+                            سنة
+
+                        </h3>
+
+
+                        <p>
+
+                            Ali Refaat ICloud — فني سوفت وير ومبرمج، تعاملت مع أكثر من 150 هاتف في خدمات السوفت وير، وبطوّر مواقع وأنظمة وسيرفرات وسوفت وير.
+
+                        </p>
+
+
+                        <p>
+
+                            عندي اهتمام بمجال السوفت وير للموبايلات
+                            Android و iPhone، بالإضافة إلى حل مشاكل
+                            السوفت وير للكمبيوتر واللاب توب وتطوير
+                            الأدوات والأنظمة.
+
+                        </p>
+
+
+                        <p>
+
+                            هدفي إني أطور شغلي باستمرار وأبني
+                            مشاريع وأنظمة احترافية تجمع بين البرمجة
+                            والخدمات التقنية والذكاء الاصطناعي.
+
+                        </p>
+
+
+                        <div class="about-tags">
+
+                            <span>
+                                <span dir="ltr">15</span> سنة
+                            </span>
+
+                            <span dir="ltr">
+                                Software Technician
+                            </span>
+
+                            <span dir="ltr">
+                                Developer
+                            </span>
+
+                            <span dir="ltr">
+                                Web Developer
+                            </span>
+
+                            <span dir="ltr">
+                                AI
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+        SERVICES
+        ========================================================= -->
+
+        <section id="services"
+                 class="section">
+
+            <div class="section-title">
+
+                <span>
+                    02
+                </span>
+
+                <h2>
+                    خدماتي
+                </h2>
+
+            </div>
 
 
             <div class="services-grid">
 
 
-                <div class="service-card">
+                <article class="service-card">
 
-                    <div class="icon">📱</div>
+                    <div class="icon">
+                        📱
+                    </div>
 
-                    <h3>سوفت وير الهواتف</h3>
-
-                    <p>
-                        تشخيص وحل مشاكل السوفت وير لأجهزة
-                        iPhone وAndroid، والفورمات والتعريب
-                        وخدمات النظام للأجهزة المصرح بها.
-                    </p>
-
-                    <span class="service-number">01</span>
-
-                </div>
-
-
-                <div class="service-card">
-
-                    <div class="icon">🔐</div>
-
-                    <h3>خدمات Apple</h3>
+                    <h3>
+                        سوفت وير موبايلات
+                    </h3>
 
                     <p>
-                        المساعدة في مشاكل الحسابات والوصول
-                        للأجهزة المملوكة للعميل وفق الصلاحيات
-                        وإثبات الملكية.
+                        خدمات وحلول سوفت وير للموبايلات
+                        Android و iPhone وحل المشاكل البرمجية.
                     </p>
 
-                    <span class="service-number">02</span>
-
-                </div>
+                </article>
 
 
-                <div class="service-card">
+                <article class="service-card">
 
-                    <div class="icon">🔑</div>
+                    <div class="icon">
+                        🛠️
+                    </div>
 
-                    <h3>استعادة الوصول</h3>
+                    <h3>
+                        حل مشاكل السوفت وير
+                    </h3>
 
                     <p>
-                        المساعدة في حل مشاكل تسجيل الدخول
-                        والوصول للحسابات والأجهزة المملوكة
-                        للعميل.
+                        تشخيص وحل مشاكل النظام والتحديثات
+                        والأخطاء البرمجية المختلفة.
                     </p>
 
-                    <span class="service-number">03</span>
-
-                </div>
+                </article>
 
 
-                <div class="service-card">
+                <article class="service-card">
 
-                    <div class="icon">🤖</div>
+                    <div class="icon">
+                        💻
+                    </div>
 
-                    <h3>مشاكل Android</h3>
+                    <h3>
+                        برمجة وتطوير
+                    </h3>
 
                     <p>
-                        تشخيص مشاكل النظام والحسابات والحماية
-                        وتقديم الحلول الرسمية المتاحة للأجهزة
-                        المملوكة للعميل.
+                        تطوير مواقع وأنظمة وأدوات باستخدام
+                        C# و Python و ASP.NET Core.
                     </p>
 
-                    <span class="service-number">04</span>
-
-                </div>
+                </article>
 
 
-                <div class="service-card">
+                <article class="service-card">
 
-                    <div class="icon">📶</div>
+                    <div class="icon">
+                        ⚙️
+                    </div>
 
-                    <h3>مشاكل الشبكات</h3>
+                    <h3>
+                        Tools & APIs
+                    </h3>
 
                     <p>
-                        تشخيص مشاكل الشبكة والاتصال ومساعدة
-                        العميل في الحلول الرسمية المتاحة للجهاز.
+                        تصميم أدوات وأنظمة API وقواعد بيانات
+                        ولوحات تحكم وإدارة المستخدمين.
                     </p>
 
-                    <span class="service-number">05</span>
-
-                </div>
+                </article>
 
 
-                <div class="service-card">
+                <article class="service-card">
 
-                    <div class="icon">💻</div>
+                    <div class="icon">
+                        🌐
+                    </div>
 
-                    <h3>سوفت وير الكمبيوتر</h3>
+                    <h3 dir="ltr">
+                        Web Development
+                    </h3>
 
                     <p>
-                        حل مشاكل Windows والتعريفات والبرامج
-                        وتشخيص مشاكل اللابتوب والكمبيوتر
-                        وتحسين الأداء.
+                        تصميم مواقع احترافية متجاوبة
+                        للموبايل والكمبيوتر.
                     </p>
 
-                    <span class="service-number">06</span>
-
-                </div>
+                </article>
 
 
-                <div class="service-card">
+                <article class="service-card">
 
-                    <div class="icon">🛠️</div>
+                    <div class="icon">
+                        🤖
+                    </div>
 
-                    <h3>الدعم الفني</h3>
+                    <h3 dir="ltr">
+                        AI & Chatbot
+                    </h3>
 
                     <p>
-                        تشخيص أخطاء الأدوات والبرامج ومشاكل
-                        التشغيل والتفعيل للخدمات المصرح بها.
+                        دمج الذكاء الاصطناعي والـChatbots
+                        داخل الأنظمة والمواقع.
                     </p>
 
-                    <span class="service-number">07</span>
-
-                </div>
+                </article>
 
 
-                <div class="service-card">
+                <article class="service-card">
 
-                    <div class="icon">⚙️</div>
+                    <div class="icon">
+                        🗄️
+                    </div>
 
-                    <h3>تطوير الأدوات</h3>
+                    <h3 dir="ltr">
+                        Databases
+                    </h3>
 
                     <p>
-                        تطوير أدوات وبرامج باستخدام C# وPython
-                        مع تحسين الأداء وإصلاح الأخطاء البرمجية.
+                        تصميم قواعد البيانات وإدارة البيانات
+                        وربطها بالأنظمة والـAPIs.
                     </p>
 
-                    <span class="service-number">08</span>
-
-                </div>
+                </article>
 
 
-                <div class="service-card">
+                <article class="service-card">
 
-                    <div class="icon">🖥️</div>
+                    <div class="icon">
+                        🔐
+                    </div>
 
-                    <h3>تطوير السيرفرات</h3>
+                    <h3 dir="ltr">
+                        Systems & Security
+                    </h3>
 
                     <p>
-                        تصميم أنظمة السيرفرات والطلبات وإدارة
-                        المستخدمين وReseller وLogs والإشعارات.
+                        تطوير أنظمة آمنة وتحسين الأداء
+                        وإدارة المستخدمين والطلبات والسجلات.
                     </p>
 
-                    <span class="service-number">09</span>
-
-                </div>
-
-
-                <div class="service-card">
-
-                    <div class="icon">🌐</div>
-
-                    <h3>تطوير المواقع</h3>
-
-                    <p>
-                        تصميم مواقع حديثة ومتجاوبة باستخدام
-                        HTML وCSS وJavaScript وASP.NET Core.
-                    </p>
-
-                    <span class="service-number">10</span>
-
-                </div>
-
-
-                <div class="service-card">
-
-                    <div class="icon">🗄️</div>
-
-                    <h3>قواعد البيانات و API</h3>
-
-                    <p>
-                        تصميم وربط قواعد بيانات SQL وتطوير
-                        APIs وربط الأنظمة والخدمات المختلفة.
-                    </p>
-
-                    <span class="service-number">11</span>
-
-                </div>
-
-
-                <div class="service-card">
-
-                    <div class="icon">🤖</div>
-
-                    <h3>الذكاء الاصطناعي</h3>
-
-                    <p>
-                        دمج Chatbot وحلول الذكاء الاصطناعي
-                        وتحليل البيانات داخل المواقع والأنظمة.
-                    </p>
-
-                    <span class="service-number">12</span>
-
-                </div>
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- =========================
-             SUPPORT
-        ========================== -->
+
+        <!-- =========================================================
+        SUPPORT
+        ========================================================= -->
 
         <section class="support-section">
 
             <div class="support-content">
 
                 <div class="support-icon">
-                    🎧
+                    🚀
                 </div>
+
 
                 <div>
 
-                    <span class="support-label">
-                        TECHNICAL SUPPORT
-                    </span>
-
                     <h2>
-                        دعم فني ومساعدة
+                        عندك مشروع أو مشكلة تقنية؟
                     </h2>
 
                     <p>
-                        دعم فني لمشاكل الأدوات والأنظمة والخدمات
-                        البرمجية ومتابعة المشاكل حتى الوصول للحل.
+                        تقدر تتواصل معايا مباشرة وأشوف لك أفضل حل.
                     </p>
 
                 </div>
 
-                <a class="btn primary"
-                   href="https://wa.me/201027573851"
+
+                <a href="https://wa.me/201027573851"
+                   class="btn primary"
                    target="_blank"
                    rel="noopener noreferrer">
-                    ابدأ المحادثة
+
+                    تواصل الآن
+
                 </a>
 
             </div>
@@ -572,47 +657,64 @@
         </section>
 
 
-        <!-- =========================
-             PROJECTS
-        ========================== -->
 
-        <section class="section" id="projects">
+        <!-- =========================================================
+        PROJECTS
+        ========================================================= -->
+
+        <section id="projects"
+                 class="section">
 
             <div class="section-title">
-                <span>03</span>
-                <h2>أعمالي وخدمات السوفت وير</h2>
+
+                <span>
+                    03
+                </span>
+
+                <h2>
+                    أعمالي ومشاريعي
+                </h2>
+
             </div>
 
+
             <p class="gallery-intro">
-                مجموعة من الأعمال والأجهزة التي تم التعامل معها
-                في مجال السوفت وير والدعم الفني.
+
+                مجموعة من المشاريع والتجارب اللي بشتغل عليها
+                في البرمجة والسوفت وير وتطوير المواقع والأنظمة.
+
             </p>
 
 
             <div class="projects-grid">
 
 
+                <!-- PROJECT 1 -->
+
                 <article class="project-card">
 
                     <div class="project-image">
 
-                        <img src="images/تخطي ايكلود1.jpg"
-                             alt="خدمات السوفت وير واستعادة الوصول"
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"
+                             alt="Ali Software Tools"
                              loading="lazy">
 
                     </div>
 
+
                     <div class="project-info">
 
-                        <small>SOFTWARE SERVICE</small>
+                        <small dir="ltr">
+                            SOFTWARE
+                        </small>
 
                         <h3>
-                            استعادة الوصول للأجهزة
+                            Ali Software Tools
                         </h3>
 
                         <p>
-                            حلول سوفت وير ومساعدة في استعادة الوصول
-                            للأجهزة المملوكة.
+                            تطوير أدوات وحلول برمجية لخدمات
+                            السوفت وير وإدارة العمليات.
                         </p>
 
                     </div>
@@ -620,27 +722,33 @@
                 </article>
 
 
+
+                <!-- PROJECT 2 -->
+
                 <article class="project-card">
 
                     <div class="project-image">
 
-                        <img src="images/ااستخراج-باسورد2.jpg"
-                             alt="استعادة بيانات الوصول"
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85"
+                             alt="Ali iCloud Server"
                              loading="lazy">
 
                     </div>
 
+
                     <div class="project-info">
 
-                        <small>DATA & SOFTWARE</small>
+                        <small dir="ltr">
+                            API / SERVER
+                        </small>
 
                         <h3>
-                            استعادة بيانات الوصول
+                            Ali iCloud Server
                         </h3>
 
                         <p>
-                            التعامل مع مشاكل بيانات الوصول والحسابات
-                            وفق الصلاحيات وإثبات الملكية.
+                            مشروع Server وAPI لإدارة الخدمات
+                            والطلبات والمستخدمين.
                         </p>
 
                     </div>
@@ -648,27 +756,33 @@
                 </article>
 
 
+
+                <!-- PROJECT 3 -->
+
                 <article class="project-card">
 
                     <div class="project-image">
 
-                        <img src="images/تخطي ايميل1.jpg"
-                             alt="خدمات Android"
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
+                             alt="Professional Portfolio"
                              loading="lazy">
 
                     </div>
 
+
                     <div class="project-info">
 
-                        <small>ANDROID</small>
+                        <small dir="ltr">
+                            WEB DEVELOPMENT
+                        </small>
 
                         <h3>
-                            خدمات Android
+                            Professional Portfolio
                         </h3>
 
                         <p>
-                            تشخيص وإصلاح مشاكل النظام والحسابات
-                            لأجهزة Android المصرح بها.
+                            تصميم وتطوير موقع شخصي احترافي
+                            لعرض المهارات والأعمال والخدمات.
                         </p>
 
                     </div>
@@ -676,27 +790,33 @@
                 </article>
 
 
+
+                <!-- PROJECT 4 -->
+
                 <article class="project-card">
 
                     <div class="project-image">
 
-                        <img src="images/تخطي بشبكه.jpg"
-                             alt="مشاكل الشبكات"
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85"
+                             alt="Management Dashboard"
                              loading="lazy">
 
                     </div>
 
+
                     <div class="project-info">
 
-                        <small>NETWORK</small>
+                        <small dir="ltr">
+                            ADMIN PANEL
+                        </small>
 
                         <h3>
-                            مشاكل الشبكات والاتصال
+                            Management Dashboard
                         </h3>
 
                         <p>
-                            تشخيص مشاكل الشبكة والاتصال وتقديم
-                            الحلول الرسمية المتاحة للجهاز.
+                            لوحة تحكم لإدارة المستخدمين
+                            والطلبات والخدمات والسجلات.
                         </p>
 
                     </div>
@@ -704,27 +824,33 @@
                 </article>
 
 
+
+                <!-- PROJECT 5 -->
+
                 <article class="project-card">
 
                     <div class="project-image">
 
-                        <img src="images/تخطي ايكلود13.jpg"
-                             alt="iPhone Software"
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85"
+                             alt="AI Chatbot"
                              loading="lazy">
 
                     </div>
 
+
                     <div class="project-info">
 
-                        <small>iPHONE SOFTWARE</small>
+                        <small dir="ltr">
+                            ARTIFICIAL INTELLIGENCE
+                        </small>
 
-                        <h3>
-                            سوفت وير iPhone
+                        <h3 dir="ltr">
+                            AI Chatbot
                         </h3>
 
                         <p>
-                            معالجة مشاكل النظام وتنفيذ خدمات
-                            السوفت وير للأجهزة المصرح بها.
+                            تجربة دمج الذكاء الاصطناعي
+                            والـChatbot داخل الأنظمة.
                         </p>
 
                     </div>
@@ -732,83 +858,33 @@
                 </article>
 
 
-                <article class="project-card">
 
-                    <div class="project-image">
-
-                        <img src="images/تخطي ايكلود14.jpg"
-                             alt="Software Repair"
-                             loading="lazy">
-
-                    </div>
-
-                    <div class="project-info">
-
-                        <small>SOFTWARE REPAIR</small>
-
-                        <h3>
-                            إصلاح مشاكل السوفت وير
-                        </h3>
-
-                        <p>
-                            تشخيص مشاكل الأجهزة وإصلاح أخطاء
-                            النظام وتحسين التشغيل والأداء.
-                        </p>
-
-                    </div>
-
-                </article>
-
+                <!-- PROJECT 6 -->
 
                 <article class="project-card">
 
                     <div class="project-image">
 
-                        <img src="images/تخطي ايكلود15.jpg"
-                             alt="Device Support"
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=85"
+                             alt="Programming Projects"
                              loading="lazy">
 
                     </div>
 
-                    <div class="project-info">
-
-                        <small>DEVICE SUPPORT</small>
-
-                        <h3>
-                            دعم الأجهزة
-                        </h3>
-
-                        <p>
-                            دعم فني وتشخيص لمشاكل الهواتف
-                            وخدمات السوفت وير المختلفة.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="project-card">
-
-                    <div class="project-image">
-
-                        <img src="images/تخطي ايميل2.jpg"
-                             alt="Android Software Support"
-                             loading="lazy">
-
-                    </div>
 
                     <div class="project-info">
 
-                        <small>ANDROID SUPPORT</small>
+                        <small dir="ltr">
+                            PROGRAMMING
+                        </small>
 
                         <h3>
-                            دعم سوفت وير Android
+                            Programming Projects
                         </h3>
 
                         <p>
-                            حلول لمشاكل النظام والحسابات والإعدادات
-                            للأجهزة المصرح بها.
+                            مشاريع وتجارب برمجية باستخدام
+                            C# وPython وتقنيات الويب.
                         </p>
 
                     </div>
@@ -820,150 +896,134 @@
         </section>
 
 
-        <!-- =========================
-             SKILLS
-        ========================== -->
 
-        <section class="section" id="skills">
+        <!-- =========================================================
+        SKILLS
+        ========================================================= -->
+
+        <section id="skills"
+                 class="section">
 
             <div class="section-title">
-                <span>04</span>
-                <h2>التقنيات</h2>
+
+                <span>
+                    04
+                </span>
+
+                <h2>
+                    مهاراتي التقنية
+                </h2>
+
             </div>
+
 
             <div class="skills">
 
-                <span>C#</span>
-                <span>Python</span>
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>ASP.NET Core</span>
-                <span>SQL</span>
-                <span>React</span>
-                <span>PowerShell</span>
-                <span>CMD</span>
-                <span>API</span>
-                <span>AI</span>
+                <span dir="ltr">C#</span>
+
+                <span dir="ltr">Python</span>
+
+                <span dir="ltr">ASP.NET Core</span>
+
+                <span dir="ltr">HTML</span>
+
+                <span dir="ltr">CSS</span>
+
+                <span dir="ltr">JavaScript</span>
+
+                <span dir="ltr">SQL</span>
+
+                <span dir="ltr">API Development</span>
+
+                <span dir="ltr">REST API</span>
+
+                <span dir="ltr">Web Development</span>
+
+                <span dir="ltr">Software Tools</span>
+
+                <span dir="ltr">Android Software</span>
+
+                <span dir="ltr">iPhone Software</span>
+
+                <span dir="ltr">Windows</span>
+
+                <span dir="ltr">Database</span>
+
+                <span dir="ltr">Admin Panel</span>
+
+                <span dir="ltr">AI</span>
+
+                <span dir="ltr">Chatbot</span>
+
+                <span dir="ltr">UI / UX</span>
+
+                <span dir="ltr">System Design</span>
 
             </div>
 
         </section>
 
 
-        <!-- =========================
-             FAQ
-        ========================== -->
 
-        <section class="section" id="faq">
+        <!-- =========================================================
+        CONTACT
+        ========================================================= -->
 
-            <div class="section-title">
-                <span>05</span>
-                <h2>الأسئلة الشائعة</h2>
-            </div>
-
-            <div class="faq-container">
-
-
-                <details class="faq-item">
-
-                    <summary>
-                        ما الخدمات التي أقدمها؟
-                    </summary>
-
-                    <p>
-                        أقدم خدمات السوفت وير والدعم الفني للهواتف
-                        والكمبيوتر، بالإضافة إلى تطوير الأدوات
-                        والمواقع والسيرفرات والأنظمة البرمجية.
-                    </p>
-
-                </details>
-
-
-                <details class="faq-item">
-
-                    <summary>
-                        هل أتعامل مع أجهزة iPhone وAndroid؟
-                    </summary>
-
-                    <p>
-                        نعم، أعمل على تشخيص مشاكل السوفت وير
-                        لأجهزة iPhone وAndroid وتقديم الحلول
-                        الرسمية والمتاحة للأجهزة المصرح بها.
-                    </p>
-
-                </details>
-
-
-                <details class="faq-item">
-
-                    <summary>
-                        هل تقدم خدمات برمجية؟
-                    </summary>
-
-                    <p>
-                        نعم، يمكن تطوير مواقع وأدوات وسيرفرات
-                        وواجهات API وقواعد بيانات حسب احتياجات
-                        المشروع.
-                    </p>
-
-                </details>
-
-
-                <details class="faq-item">
-
-                    <summary>
-                        كيف يمكن التواصل؟
-                    </summary>
-
-                    <p>
-                        يمكنك التواصل مباشرة عبر WhatsApp أو
-                        Facebook أو TikTok من قسم التواصل.
-                    </p>
-
-                </details>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
-        <section class="section contact" id="contact">
+        <section id="contact"
+                 class="section contact">
 
             <div class="section-title">
-                <span>06</span>
-                <h2>تواصل معي</h2>
+
+                <span>
+                    05
+                </span>
+
+                <h2>
+                    تواصل معايا
+                </h2>
+
             </div>
+
 
             <p>
-                للاستفسارات والدعم الفني والمشاريع البرمجية
+
+                لو عايز تتواصل معايا أو تشوف شغلي
+                أو عندك جهاز تواصل معايا، تقدر تلاقيني على
+                منصات التواصل التالية.
+
             </p>
 
+
             <div class="contact-buttons">
+
+
+                <a class="contact-btn"
+                   href="https://www.facebook.com/share/196kv2DtxH/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    🔵 Facebook
+
+                </a>
+
 
                 <a class="contact-btn"
                    href="https://wa.me/201027573851"
                    target="_blank"
                    rel="noopener noreferrer">
-                    💬 WhatsApp
+
+                    🟢 WhatsApp
+
                 </a>
 
-                <a class="contact-btn"
-                   href="https://www.facebook.com/share/191E2G55Te/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    📘 Facebook
-                </a>
 
                 <a class="contact-btn"
                    href="https://www.tiktok.com/@ali_refaat12"
                    target="_blank"
                    rel="noopener noreferrer">
+
                     🎵 TikTok
+
                 </a>
 
             </div>
@@ -971,43 +1031,79 @@
         </section>
 
 
-        <!-- =========================
-             FINAL CTA
-        ========================== -->
+
+        <!-- =========================================================
+        FINAL CTA
+        ========================================================= -->
 
         <section class="final-cta">
 
             <div class="final-cta-glow"></div>
 
+
             <div class="final-cta-content">
 
-                <span class="final-badge">
-                    ● Ali Refaat iCloud
-                </span>
+                <div class="final-badge">
+
+                    <span dir="ltr">
+                        Ali Refaat iCloud
+                    </span>
+
+                    •
+                    <span dir="ltr">15</span>
+                    سنة
+
+                </div>
+
 
                 <h2>
-                    عندك مشكلة في جهازك؟
-                    <span>خلينا نحلها.</span>
+
+                    ببني مستقبلي في
+                    <span>
+                        التكنولوجيا 🚀
+                    </span>
+
                 </h2>
 
+
                 <p>
-                    لو محتاج دعم فني، خدمة سوفت وير،
-                    تطوير أداة، موقع أو نظام برمجي،
-                    تواصل معي مباشرة.
+
+                    برمجة، سوفت وير، مواقع، أدوات،
+                    APIs، أنظمة وذكاء اصطناعي.
+
                 </p>
+
 
                 <div class="final-cta-buttons">
 
-                    <a class="final-btn primary"
-                       href="https://wa.me/201027573851"
+
+                    <a href="https://wa.me/201027573851"
+                       class="final-btn primary"
                        target="_blank"
                        rel="noopener noreferrer">
-                        💬 تواصل عبر WhatsApp
+
+                        💬 كلمني واتساب
+
                     </a>
 
-                    <a class="final-btn secondary"
-                       href="#home">
-                        ↑ العودة للبداية
+
+                    <a href="https://www.facebook.com/share/196kv2DtxH/"
+                       class="final-btn secondary"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        🔵 Facebook
+
+                    </a>
+
+
+                    <a href="https://www.tiktok.com/@ali_refaat12"
+                       class="final-btn secondary"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        🎵 TikTok
+
                     </a>
 
                 </div>
@@ -1019,9 +1115,10 @@
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+
+    <!-- =========================================================
+    FOOTER
+    ========================================================= -->
 
     <footer class="site-footer">
 
@@ -1030,74 +1127,133 @@
 
             <div class="footer-brand">
 
-                <div class="footer-logo">
-                    Ali <span>Refaat</span> iCloud
+                <div class="footer-logo"
+                     dir="ltr">
+
+                    Ali
+                    <span>
+                        Refaat iCloud
+                    </span>
+
                 </div>
 
+
                 <p>
-                    Software Technician • Developer • Support
+
+                    فني سوفت وير ومبرمج
+                    ومهتم بتطوير التكنولوجيا.
+
                 </p>
 
+
                 <small>
-                    حلول سوفت وير، تطوير أدوات وسيرفرات،
-                    مواقع وأنظمة برمجية ودعم فني.
+
+                    علي رفعت —
+                    <span dir="ltr">15</span> سنة
+
+                    <br>
+
+                    <span dir="ltr">
+                        Software Technician & Developer
+                    </span>
+
                 </small>
 
             </div>
 
 
+
             <div class="footer-column">
 
-                <h3>روابط سريعة</h3>
+                <h3>
+                    الموقع
+                </h3>
 
-                <a href="#home">الرئيسية</a>
 
-                <a href="#about">عني</a>
+                <a href="#home">
+                    الرئيسية
+                </a>
 
-                <a href="#services">الخدمات</a>
 
-                <a href="#projects">الأعمال</a>
+                <a href="#about">
+                    عني
+                </a>
 
-                <a href="#skills">التقنيات</a>
+
+                <a href="#services">
+                    الخدمات
+                </a>
+
+
+                <a href="#projects">
+                    أعمالي
+                </a>
 
             </div>
 
 
+
             <div class="footer-column">
 
-                <h3>الخدمات</h3>
+                <h3>
+                    مهارات
+                </h3>
 
-                <a href="#services">Software</a>
 
-                <a href="#services">Development</a>
+                <a href="#skills">
+                    Programming
+                </a>
 
-                <a href="#services">Servers</a>
 
-                <a href="#services">API & Database</a>
+                <a href="#skills">
+                    Software
+                </a>
+
+
+                <a href="#skills">
+                    Web Development
+                </a>
+
+
+                <a href="#skills">
+                    AI
+                </a>
 
             </div>
 
 
+
             <div class="footer-column">
 
-                <h3>تواصل</h3>
+                <h3>
+                    تواصل
+                </h3>
+
+
+                <a href="https://www.facebook.com/share/196kv2DtxH/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    Facebook
+
+                </a>
+
 
                 <a href="https://wa.me/201027573851"
                    target="_blank"
                    rel="noopener noreferrer">
+
                     WhatsApp
+
                 </a>
 
-                <a href="https://www.facebook.com/share/191E2G55Te/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Facebook
-                </a>
 
                 <a href="https://www.tiktok.com/@ali_refaat12"
                    target="_blank"
                    rel="noopener noreferrer">
+
                     TikTok
+
                 </a>
 
             </div>
@@ -1108,12 +1264,18 @@
         <div class="footer-bottom">
 
             <span>
-                © <span id="year"></span>
+
+                ©
+                <span id="year"></span>
                 Ali Refaat iCloud
+
             </span>
 
+
             <span>
-                All Rights Reserved.
+
+                Built with passion & technology 🚀
+
             </span>
 
         </div>
@@ -1121,61 +1283,71 @@
     </footer>
 
 
-    <!-- =========================
-         FLOATING WHATSAPP
-    ========================== -->
 
-    <a class="floating-whatsapp"
-       href="https://wa.me/201027573851"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="تواصل معي عبر واتساب">
-        💬
-    </a>
+    <!-- =========================================================
+    IMAGE LIGHTBOX
+    ========================================================= -->
 
-
-    <!-- =========================
-         BACK TO TOP
-    ========================== -->
-
-    <button class="back-to-top"
-            id="backToTop"
-            type="button"
-            aria-label="العودة إلى أعلى الصفحة">
-        ↑
-    </button>
-
-
-    <!-- =========================
-         IMAGE LIGHTBOX
-    ========================== -->
-
-    <div class="image-lightbox"
-         id="imageLightbox"
+    <div id="imageLightbox"
+         class="image-lightbox"
          role="dialog"
          aria-modal="true"
-         aria-label="معاينة الصورة">
+         aria-label="عرض الصورة">
+
 
         <button type="button"
-                class="lightbox-close"
                 id="lightboxClose"
-                aria-label="إغلاق الصورة">
+                class="lightbox-close"
+                aria-label="إغلاق">
+
             ×
+
         </button>
+
 
         <img id="lightboxImage"
              src=""
-             alt="Preview">
+             alt="">
 
     </div>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
+
+    <!-- =========================================================
+    FLOATING WHATSAPP
+    ========================================================= -->
+
+    <a href="https://wa.me/201027573851"
+       class="floating-whatsapp"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="تواصل معي عبر واتساب">
+
+        💬
+
+    </a>
+
+
+
+    <!-- =========================================================
+    BACK TO TOP
+    ========================================================= -->
+
+    <button type="button"
+            class="back-to-top"
+            aria-label="العودة إلى أعلى الصفحة">
+
+        ↑
+
+    </button>
+
+
+
+    <!-- =========================================================
+    SCRIPT
+    ========================================================= -->
 
     <script src="script.js"></script>
 
 </body>
-
 </html>

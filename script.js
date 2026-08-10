@@ -1,5 +1,5 @@
 ﻿// ======================================================
-// Ali Refaat iCloud - Professional Portfolio
+// Ali Refaat - Professional Portfolio
 // Final Production JavaScript
 // ======================================================
 
@@ -11,13 +11,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==================================================
 
     const CONFIG = {
+        name: "Ali Refaat",
+        age: 15,
+
         whatsapp: "201027573851",
+
+        facebook:
+            "https://www.facebook.com/share/196kv2DtxH/",
+
+        tiktok:
+            "https://www.tiktok.com/@ali_refaat12",
+
         revealThreshold: 0.12,
         navbarOffset: 50,
         topButtonOffset: 500,
+
         cardGlow: true,
         heroTilt: true,
-        counters: true
+        counters: true,
+        particles: true
     };
 
     // ==================================================
@@ -31,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         [...parent.querySelectorAll(selector)];
 
     // ==================================================
-    // MOTION / DEVICE
+    // DEVICE / MOTION
     // ==================================================
 
     const prefersReducedMotion = window.matchMedia(
@@ -47,13 +59,121 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==================================================
+    // USER DATA
+    // ==================================================
+
+    const replaceText = (selector, text) => {
+        const element = $(selector);
+
+        if (element) {
+            element.textContent = text;
+        }
+    };
+
+    replaceText("#userAge", `${CONFIG.age} سنة`);
+    replaceText("#age", `${CONFIG.age} سنة`);
+    replaceText("#userName", CONFIG.name);
+
+    // ==================================================
+    // SOCIAL LINKS
+    // ==================================================
+
+    const socialLinks = {
+        facebook: CONFIG.facebook,
+        tiktok: CONFIG.tiktok,
+        whatsapp: `https://wa.me/${CONFIG.whatsapp}`
+    };
+
+    $$("a").forEach((link) => {
+        const type =
+            link.dataset.social ||
+            link.dataset.platform ||
+            "";
+
+        if (type && socialLinks[type]) {
+            link.href = socialLinks[type];
+        }
+    });
+
+    // Facebook
+    $$(
+        'a[href*="facebook.com"], [data-social="facebook"]'
+    ).forEach((link) => {
+        link.href = CONFIG.facebook;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+    });
+
+    // TikTok
+    $$(
+        'a[href*="tiktok.com"], [data-social="tiktok"]'
+    ).forEach((link) => {
+        link.href = CONFIG.tiktok;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+    });
+
+    // WhatsApp
+    $$(
+        'a[href*="wa.me"], [data-social="whatsapp"]'
+    ).forEach((link) => {
+        link.href =
+            `https://wa.me/${CONFIG.whatsapp}`;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+    });
+
+    // ==================================================
+    // AUTO SOCIAL BUTTONS
+    // ==================================================
+
+    const createSocialButton = (
+        href,
+        className,
+        icon,
+        label
+    ) => {
+        const button = document.createElement("a");
+
+        button.href = href;
+        button.className = className;
+        button.target = "_blank";
+        button.rel = "noopener noreferrer";
+        button.textContent = icon;
+        button.setAttribute("aria-label", label);
+
+        return button;
+    };
+
+    // Floating WhatsApp
+    if (!$(".floating-whatsapp")) {
+        const whatsappButton =
+            createSocialButton(
+                `https://wa.me/${CONFIG.whatsapp}`,
+                "floating-whatsapp",
+                "💬",
+                "تواصل معي عبر واتساب"
+            );
+
+        document.body.appendChild(
+            whatsappButton
+        );
+    }
+
+    // ==================================================
     // SCROLL REVEAL
     // ==================================================
 
     const revealElements = $$(
-        ".service-card, .project-card, .about-box, " +
-        ".support-section, .section-title, .skills span, " +
-        ".hero-card, .contact-btn, .final-cta"
+        ".service-card, " +
+        ".project-card, " +
+        ".about-box, " +
+        ".support-section, " +
+        ".section-title, " +
+        ".skills span, " +
+        ".hero-card, " +
+        ".contact-btn, " +
+        ".final-cta"
     );
 
     revealElements.forEach((element) => {
@@ -64,20 +184,31 @@ document.addEventListener("DOMContentLoaded", () => {
         "IntersectionObserver" in window &&
         !prefersReducedMotion
     ) {
-        const revealObserver = new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
 
-                    entry.target.classList.add("revealed");
-                    observer.unobserve(entry.target);
-                });
-            },
-            {
-                threshold: CONFIG.revealThreshold,
-                rootMargin: "0px 0px -40px 0px"
-            }
-        );
+                        entry.target.classList.add(
+                            "revealed"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+                    });
+                },
+                {
+                    threshold:
+                        CONFIG.revealThreshold,
+
+                    rootMargin:
+                        "0px 0px -40px 0px"
+                }
+            );
 
         revealElements.forEach((element) => {
             revealObserver.observe(element);
@@ -97,16 +228,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const updateNavbar = () => {
         if (!navbar) return;
 
-        const scrolled = window.scrollY > CONFIG.navbarOffset;
+        const scrolled =
+            window.scrollY >
+            CONFIG.navbarOffset;
 
-        navbar.classList.toggle("scrolled", scrolled);
+        navbar.classList.toggle(
+            "scrolled",
+            scrolled
+        );
 
         if (scrolled) {
-            navbar.style.background = "rgba(5, 7, 13, 0.94)";
+            navbar.style.background =
+                "rgba(5, 7, 13, 0.94)";
+
             navbar.style.boxShadow =
                 "0 15px 50px rgba(0, 0, 0, 0.4)";
         } else {
-            navbar.style.background = "rgba(8, 11, 18, 0.72)";
+            navbar.style.background =
+                "rgba(8, 11, 18, 0.72)";
+
             navbar.style.boxShadow =
                 "0 20px 60px rgba(0, 0, 0, 0.3)";
         }
@@ -124,15 +264,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // MOBILE MENU
     // ==================================================
 
-    const nav = navbar ? $("nav", navbar) : $("nav");
-    const mobileButton = navbar
-        ? $(".menu-toggle", navbar)
-        : $(".menu-toggle");
+    const nav =
+        navbar
+            ? $("nav", navbar)
+            : $("nav");
+
+    const mobileButton =
+        navbar
+            ? $(".menu-toggle", navbar)
+            : $(".menu-toggle");
 
     const closeMobileMenu = () => {
         if (!navbar || !mobileButton) return;
 
-        navbar.classList.remove("mobile-open");
+        navbar.classList.remove(
+            "mobile-open"
+        );
 
         mobileButton.setAttribute(
             "aria-expanded",
@@ -150,9 +297,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleMobileMenu = () => {
         if (!navbar || !mobileButton) return;
 
-        const opened = navbar.classList.toggle(
-            "mobile-open"
-        );
+        const opened =
+            navbar.classList.toggle(
+                "mobile-open"
+            );
 
         mobileButton.setAttribute(
             "aria-expanded",
@@ -161,7 +309,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         mobileButton.setAttribute(
             "aria-label",
-            opened ? "إغلاق القائمة" : "فتح القائمة"
+            opened
+                ? "إغلاق القائمة"
+                : "فتح القائمة"
         );
 
         mobileButton.textContent =
@@ -187,122 +337,159 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    document.addEventListener("click", (event) => {
-        if (
-            !navbar ||
-            !mobileButton ||
-            !navbar.classList.contains("mobile-open")
-        ) {
-            return;
-        }
+    document.addEventListener(
+        "click",
+        (event) => {
+            if (
+                !navbar ||
+                !mobileButton ||
+                !navbar.classList.contains(
+                    "mobile-open"
+                )
+            ) {
+                return;
+            }
 
-        if (!navbar.contains(event.target)) {
-            closeMobileMenu();
+            if (!navbar.contains(event.target)) {
+                closeMobileMenu();
+            }
         }
-    });
+    );
 
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            closeMobileMenu();
+    document.addEventListener(
+        "keydown",
+        (event) => {
+            if (event.key === "Escape") {
+                closeMobileMenu();
+            }
         }
-    });
+    );
 
     // ==================================================
     // SMOOTH SCROLL
     // ==================================================
 
     $$('a[href^="#"]').forEach((link) => {
-        link.addEventListener("click", (event) => {
-            const targetId = link.getAttribute("href");
+        link.addEventListener(
+            "click",
+            (event) => {
+                const targetId =
+                    link.getAttribute("href");
 
-            if (!targetId || targetId === "#") {
-                return;
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
+
+                let target;
+
+                try {
+                    target =
+                        document.querySelector(
+                            targetId
+                        );
+                } catch {
+                    return;
+                }
+
+                if (!target) return;
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior:
+                        prefersReducedMotion
+                            ? "auto"
+                            : "smooth",
+
+                    block: "start"
+                });
+
+                if (history.pushState) {
+                    history.pushState(
+                        null,
+                        "",
+                        targetId
+                    );
+                }
             }
-
-            let target;
-
-            try {
-                target = document.querySelector(targetId);
-            } catch {
-                return;
-            }
-
-            if (!target) return;
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: prefersReducedMotion
-                    ? "auto"
-                    : "smooth",
-                block: "start"
-            });
-
-            if (history.pushState) {
-                history.pushState(
-                    null,
-                    "",
-                    targetId
-                );
-            }
-        });
+        );
     });
 
     // ==================================================
     // ACTIVE NAVIGATION
     // ==================================================
 
-    const sections = $$("main section[id]");
-    const navLinks = $$(".navbar nav a[href^='#']");
+    const sections =
+        $$("main section[id]");
+
+    const navLinks =
+        $$(".navbar nav a[href^='#']");
 
     if (
         sections.length &&
         navLinks.length &&
         "IntersectionObserver" in window
     ) {
-        const sectionObserver = new IntersectionObserver(
-            (entries) => {
-                const visibleSections = entries
-                    .filter((entry) => entry.isIntersecting)
-                    .sort(
-                        (a, b) =>
-                            a.boundingClientRect.top -
-                            b.boundingClientRect.top
-                    );
+        const sectionObserver =
+            new IntersectionObserver(
+                (entries) => {
+                    const visible =
+                        entries
+                            .filter(
+                                (entry) =>
+                                    entry.isIntersecting
+                            )
+                            .sort(
+                                (a, b) =>
+                                    a
+                                        .boundingClientRect
+                                        .top -
+                                    b
+                                        .boundingClientRect
+                                        .top
+                            );
 
-                if (!visibleSections.length) return;
-
-                const activeId =
-                    visibleSections[0].target.id;
-
-                navLinks.forEach((link) => {
-                    const isActive =
-                        link.getAttribute("href") ===
-                        `#${activeId}`;
-
-                    link.classList.toggle(
-                        "active",
-                        isActive
-                    );
-
-                    if (isActive) {
-                        link.setAttribute(
-                            "aria-current",
-                            "page"
-                        );
-                    } else {
-                        link.removeAttribute(
-                            "aria-current"
-                        );
+                    if (!visible.length) {
+                        return;
                     }
-                });
-            },
-            {
-                threshold: 0.15,
-                rootMargin:
-                    "-15% 0px -60% 0px"
-            }
-        );
+
+                    const activeId =
+                        visible[0].target.id;
+
+                    navLinks.forEach((link) => {
+                        const active =
+                            link.getAttribute(
+                                "href"
+                            ) ===
+                            `#${activeId}`;
+
+                        link.classList.toggle(
+                            "active",
+                            active
+                        );
+
+                        if (active) {
+                            link.setAttribute(
+                                "aria-current",
+                                "page"
+                            );
+                        } else {
+                            link.removeAttribute(
+                                "aria-current"
+                            );
+                        }
+                    });
+                },
+                {
+                    threshold: 0.15,
+
+                    rootMargin:
+                        "-15% 0px -60% 0px"
+                }
+            );
 
         sections.forEach((section) => {
             sectionObserver.observe(section);
@@ -323,47 +510,56 @@ document.addEventListener("DOMContentLoaded", () => {
         !prefersReducedMotion
     ) {
         cards.forEach((card) => {
-            card.addEventListener("mousemove", (event) => {
-                const rect =
-                    card.getBoundingClientRect();
+            card.addEventListener(
+                "mousemove",
+                (event) => {
+                    const rect =
+                        card.getBoundingClientRect();
 
-                const x =
-                    event.clientX - rect.left;
+                    const x =
+                        event.clientX -
+                        rect.left;
 
-                const y =
-                    event.clientY - rect.top;
+                    const y =
+                        event.clientY -
+                        rect.top;
 
-                card.style.setProperty(
-                    "--mouse-x",
-                    `${x}px`
-                );
+                    card.style.setProperty(
+                        "--mouse-x",
+                        `${x}px`
+                    );
 
-                card.style.setProperty(
-                    "--mouse-y",
-                    `${y}px`
-                );
+                    card.style.setProperty(
+                        "--mouse-y",
+                        `${y}px`
+                    );
 
-                card.style.background = `
-                    radial-gradient(
-                        circle at ${x}px ${y}px,
-                        rgba(0, 229, 255, 0.10),
-                        rgba(15, 20, 32, 0.72) 48%
-                    )
-                `;
-            });
+                    card.style.background = `
+                        radial-gradient(
+                            circle at ${x}px ${y}px,
+                            rgba(0, 229, 255, 0.10),
+                            rgba(15, 20, 32, 0.72) 48%
+                        )
+                    `;
+                }
+            );
 
-            card.addEventListener("mouseleave", () => {
-                card.style.background =
-                    "rgba(15, 20, 32, 0.72)";
-            });
+            card.addEventListener(
+                "mouseleave",
+                () => {
+                    card.style.background =
+                        "rgba(15, 20, 32, 0.72)";
+                }
+            );
         });
     }
 
     // ==================================================
-    // HERO CARD 3D TILT
+    // HERO 3D TILT
     // ==================================================
 
-    const heroCard = $(".hero-card");
+    const heroCard =
+        $(".hero-card");
 
     if (
         CONFIG.heroTilt &&
@@ -378,18 +574,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     heroCard.getBoundingClientRect();
 
                 const x =
-                    event.clientX - rect.left;
+                    event.clientX -
+                    rect.left;
 
                 const y =
-                    event.clientY - rect.top;
+                    event.clientY -
+                    rect.top;
 
                 const rotateX =
-                    ((y / rect.height) - 0.5) * -8;
+                    ((y / rect.height) -
+                        0.5) *
+                    -8;
 
                 const rotateY =
-                    ((x / rect.width) - 0.5) * 8;
+                    ((x / rect.width) -
+                        0.5) *
+                    8;
 
-                heroCard.style.animation = "none";
+                heroCard.style.animation =
+                    "none";
 
                 heroCard.style.transform = `
                     perspective(900px)
@@ -403,7 +606,9 @@ document.addEventListener("DOMContentLoaded", () => {
         heroCard.addEventListener(
             "mouseleave",
             () => {
-                heroCard.style.animation = "";
+                heroCard.style.animation =
+                    "";
+
                 heroCard.style.transform =
                     "rotate(2deg)";
             }
@@ -411,129 +616,162 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==================================================
-    // SKILLS HOVER
+    // SKILLS INTERACTION
     // ==================================================
 
     if (
         supportsHover &&
         !prefersReducedMotion
     ) {
-        $$(".skills span").forEach((skill) => {
-            skill.addEventListener(
-                "mouseenter",
-                () => {
-                    skill.style.transform =
-                        "translateY(-5px) scale(1.04)";
-                }
-            );
+        $$(".skills span").forEach(
+            (skill) => {
+                skill.addEventListener(
+                    "mouseenter",
+                    () => {
+                        skill.style.transform =
+                            "translateY(-5px) scale(1.04)";
+                    }
+                );
 
-            skill.addEventListener(
-                "mouseleave",
-                () => {
-                    skill.style.transform = "";
-                }
-            );
-        });
+                skill.addEventListener(
+                    "mouseleave",
+                    () => {
+                        skill.style.transform =
+                            "";
+                    }
+                );
+            }
+        );
     }
 
     // ==================================================
     // STATS COUNTER
     // ==================================================
 
-    const statNumbers = $$(".stats strong");
+    const statNumbers =
+        $$(".stats strong");
 
-    const animateCounter = (element) => {
-        if (
-            element.dataset.counterDone === "true"
-        ) {
-            return;
-        }
-
-        const original =
-            element.textContent.trim();
-
-        const match =
-            original.match(/^(\d+)(.*)$/);
-
-        if (!match) return;
-
-        const target =
-            parseInt(match[1], 10);
-
-        const suffix =
-            match[2] || "";
-
-        element.dataset.counterDone = "true";
-
-        if (
-            prefersReducedMotion ||
-            !CONFIG.counters ||
-            target <= 0
-        ) {
-            element.textContent =
-                target + suffix;
-
-            return;
-        }
-
-        const duration = 1200;
-        const startTime = performance.now();
-
-        const update = (currentTime) => {
-            const progress = Math.min(
-                (currentTime - startTime) /
-                duration,
-                1
-            );
-
-            const eased =
-                1 -
-                Math.pow(
-                    1 - progress,
-                    3
-                );
-
-            const current =
-                Math.floor(
-                    target * eased
-                );
-
-            element.textContent =
-                current + suffix;
-
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            } else {
-                element.textContent =
-                    target + suffix;
+    const animateCounter =
+        (element) => {
+            if (
+                element.dataset
+                    .counterDone ===
+                "true"
+            ) {
+                return;
             }
-        };
 
-        requestAnimationFrame(update);
-    };
+            const original =
+                element.textContent.trim();
+
+            const match =
+                original.match(
+                    /^(\d+)(.*)$/
+                );
+
+            if (!match) return;
+
+            const target =
+                parseInt(
+                    match[1],
+                    10
+                );
+
+            const suffix =
+                match[2] || "";
+
+            element.dataset.counterDone =
+                "true";
+
+            if (
+                prefersReducedMotion ||
+                !CONFIG.counters ||
+                target <= 0
+            ) {
+                element.textContent =
+                    target +
+                    suffix;
+
+                return;
+            }
+
+            const duration =
+                1200;
+
+            const startTime =
+                performance.now();
+
+            const update =
+                (currentTime) => {
+                    const progress =
+                        Math.min(
+                            (currentTime -
+                                startTime) /
+                            duration,
+                            1
+                        );
+
+                    const eased =
+                        1 -
+                        Math.pow(
+                            1 -
+                            progress,
+                            3
+                        );
+
+                    const current =
+                        Math.floor(
+                            target *
+                            eased
+                        );
+
+                    element.textContent =
+                        current +
+                        suffix;
+
+                    if (
+                        progress < 1
+                    ) {
+                        requestAnimationFrame(
+                            update
+                        );
+                    } else {
+                        element.textContent =
+                            target +
+                            suffix;
+                    }
+                };
+
+            requestAnimationFrame(
+                update
+            );
+        };
 
     if (
         statNumbers.length &&
-        "IntersectionObserver" in window
+        "IntersectionObserver" in
+        window
     ) {
         const statsObserver =
             new IntersectionObserver(
                 (entries, observer) => {
-                    entries.forEach((entry) => {
-                        if (
-                            !entry.isIntersecting
-                        ) {
-                            return;
+                    entries.forEach(
+                        (entry) => {
+                            if (
+                                !entry.isIntersecting
+                            ) {
+                                return;
+                            }
+
+                            animateCounter(
+                                entry.target
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
                         }
-
-                        animateCounter(
-                            entry.target
-                        );
-
-                        observer.unobserve(
-                            entry.target
-                        );
-                    });
+                    );
                 },
                 {
                     threshold: 0.7
@@ -544,14 +782,17 @@ document.addEventListener("DOMContentLoaded", () => {
             statsObserver.observe(stat);
         });
     } else {
-        statNumbers.forEach(animateCounter);
+        statNumbers.forEach(
+            animateCounter
+        );
     }
 
     // ==================================================
     // DYNAMIC YEAR
     // ==================================================
 
-    const yearElement = $("#year");
+    const yearElement =
+        $("#year");
 
     if (yearElement) {
         yearElement.textContent =
@@ -559,62 +800,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==================================================
-    // WHATSAPP
+    // WHATSAPP BUTTON
     // ==================================================
 
     const whatsappUrl =
         `https://wa.me/${CONFIG.whatsapp}`;
 
-    $$('a[href*="wa.me"]').forEach((link) => {
-        link.href = whatsappUrl;
-        link.target = "_blank";
-        link.rel =
-            "noopener noreferrer";
-    });
+    $$('a[href*="wa.me"]').forEach(
+        (link) => {
+            link.href =
+                whatsappUrl;
 
-    if (!$(".floating-whatsapp")) {
-        const whatsappButton =
-            document.createElement("a");
+            link.target =
+                "_blank";
 
-        whatsappButton.href =
-            whatsappUrl;
-
-        whatsappButton.target =
-            "_blank";
-
-        whatsappButton.rel =
-            "noopener noreferrer";
-
-        whatsappButton.className =
-            "floating-whatsapp";
-
-        whatsappButton.innerHTML = "💬";
-
-        whatsappButton.setAttribute(
-            "aria-label",
-            "تواصل معي عبر واتساب"
-        );
-
-        document.body.appendChild(
-            whatsappButton
-        );
-    }
+            link.rel =
+                "noopener noreferrer";
+        }
+    );
 
     // ==================================================
     // BACK TO TOP
     // ==================================================
 
-    let topButton = $(".back-to-top");
+    let topButton =
+        $(".back-to-top");
 
     if (!topButton) {
         topButton =
-            document.createElement("button");
+            document.createElement(
+                "button"
+            );
 
-        topButton.type = "button";
+        topButton.type =
+            "button";
+
         topButton.className =
             "back-to-top";
 
-        topButton.innerHTML = "↑";
+        topButton.innerHTML =
+            "↑";
 
         topButton.setAttribute(
             "aria-label",
@@ -626,16 +851,21 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    const updateTopButton = () => {
-        if (
-            window.scrollY >
-            CONFIG.topButtonOffset
-        ) {
-            topButton.classList.add("show");
-        } else {
-            topButton.classList.remove("show");
-        }
-    };
+    const updateTopButton =
+        () => {
+            if (
+                window.scrollY >
+                CONFIG.topButtonOffset
+            ) {
+                topButton.classList.add(
+                    "show"
+                );
+            } else {
+                topButton.classList.remove(
+                    "show"
+                );
+            }
+        };
 
     window.addEventListener(
         "scroll",
@@ -650,9 +880,11 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
             window.scrollTo({
                 top: 0,
-                behavior: prefersReducedMotion
-                    ? "auto"
-                    : "smooth"
+
+                behavior:
+                    prefersReducedMotion
+                        ? "auto"
+                        : "smooth"
             });
         }
     );
@@ -673,109 +905,117 @@ document.addEventListener("DOMContentLoaded", () => {
     const projectImages =
         $$(".project-image img");
 
-    let lastFocusedElement = null;
+    let lastFocusedElement =
+        null;
 
     if (
         lightbox &&
         lightboxImage &&
         lightboxClose
     ) {
-        projectImages.forEach((image) => {
-            image.style.cursor =
-                "zoom-in";
+        projectImages.forEach(
+            (image) => {
+                image.style.cursor =
+                    "zoom-in";
 
-            image.setAttribute(
-                "tabindex",
-                "0"
-            );
-
-            image.setAttribute(
-                "role",
-                "button"
-            );
-
-            image.setAttribute(
-                "aria-label",
-                "فتح الصورة بالحجم الكامل"
-            );
-
-            const openLightbox = () => {
-                lastFocusedElement =
-                    document.activeElement;
-
-                lightboxImage.src =
-                    image.currentSrc ||
-                    image.src;
-
-                lightboxImage.alt =
-                    image.alt ||
-                    "Preview";
-
-                lightbox.classList.add(
-                    "active"
+                image.setAttribute(
+                    "tabindex",
+                    "0"
                 );
 
-                document.body.style.overflow =
-                    "hidden";
+                image.setAttribute(
+                    "role",
+                    "button"
+                );
 
-                lightboxClose.focus();
-            };
+                image.setAttribute(
+                    "aria-label",
+                    "فتح الصورة بالحجم الكامل"
+                );
 
-            image.addEventListener(
-                "click",
-                openLightbox
-            );
+                const openLightbox =
+                    () => {
+                        lastFocusedElement =
+                            document.activeElement;
 
-            image.addEventListener(
-                "keydown",
-                (event) => {
-                    if (
-                        event.key === "Enter" ||
-                        event.key === " "
-                    ) {
-                        event.preventDefault();
-                        openLightbox();
+                        lightboxImage.src =
+                            image.currentSrc ||
+                            image.src;
+
+                        lightboxImage.alt =
+                            image.alt ||
+                            "Project Preview";
+
+                        lightbox.classList.add(
+                            "active"
+                        );
+
+                        document.body.style.overflow =
+                            "hidden";
+
+                        lightboxClose.focus();
+                    };
+
+                image.addEventListener(
+                    "click",
+                    openLightbox
+                );
+
+                image.addEventListener(
+                    "keydown",
+                    (event) => {
+                        if (
+                            event.key ===
+                            "Enter" ||
+                            event.key ===
+                            " "
+                        ) {
+                            event.preventDefault();
+
+                            openLightbox();
+                        }
                     }
-                }
-            );
-        });
-
-        const closeLightbox = () => {
-            if (
-                !lightbox.classList.contains(
-                    "active"
-                )
-            ) {
-                return;
+                );
             }
+        );
 
-            lightbox.classList.remove(
-                "active"
-            );
-
-            document.body.style.overflow =
-                "";
-
-            setTimeout(() => {
+        const closeLightbox =
+            () => {
                 if (
                     !lightbox.classList.contains(
                         "active"
                     )
                 ) {
-                    lightboxImage.removeAttribute(
-                        "src"
-                    );
+                    return;
                 }
-            }, 300);
 
-            if (
-                lastFocusedElement &&
-                typeof lastFocusedElement.focus ===
-                "function"
-            ) {
-                lastFocusedElement.focus();
-            }
-        };
+                lightbox.classList.remove(
+                    "active"
+                );
+
+                document.body.style.overflow =
+                    "";
+
+                setTimeout(() => {
+                    if (
+                        !lightbox.classList.contains(
+                            "active"
+                        )
+                    ) {
+                        lightboxImage.removeAttribute(
+                            "src"
+                        );
+                    }
+                }, 300);
+
+                if (
+                    lastFocusedElement &&
+                    typeof lastFocusedElement.focus ===
+                    "function"
+                ) {
+                    lastFocusedElement.focus();
+                }
+            };
 
         lightboxClose.addEventListener(
             "click",
@@ -786,7 +1026,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "click",
             (event) => {
                 if (
-                    event.target === lightbox
+                    event.target ===
+                    lightbox
                 ) {
                     closeLightbox();
                 }
@@ -797,7 +1038,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "keydown",
             (event) => {
                 if (
-                    event.key === "Escape" &&
+                    event.key ===
+                    "Escape" &&
                     lightbox.classList.contains(
                         "active"
                     )
@@ -812,72 +1054,211 @@ document.addEventListener("DOMContentLoaded", () => {
     // EXTERNAL LINKS SECURITY
     // ==================================================
 
-    $$('a[target="_blank"]').forEach((link) => {
-        link.setAttribute(
-            "rel",
-            "noopener noreferrer"
-        );
-    });
+    $$('a[target="_blank"]').forEach(
+        (link) => {
+            link.setAttribute(
+                "rel",
+                "noopener noreferrer"
+            );
+        }
+    );
 
     // ==================================================
     // IMAGE ERROR HANDLING
     // ==================================================
 
-    $$("img").forEach((image) => {
-        image.addEventListener(
-            "error",
-            () => {
-                image.classList.add(
-                    "image-error"
-                );
+    $$("img").forEach(
+        (image) => {
+            image.addEventListener(
+                "error",
+                () => {
+                    image.classList.add(
+                        "image-error"
+                    );
 
-                image.setAttribute(
-                    "data-image-error",
-                    "true"
-                );
-            }
-        );
-    });
+                    image.setAttribute(
+                        "data-image-error",
+                        "true"
+                    );
+                }
+            );
+        }
+    );
 
     // ==================================================
     // BUTTON CLICK EFFECT
     // ==================================================
 
-    $$(".btn, .contact-btn").forEach((button) => {
-        button.addEventListener(
-            "click",
-            () => {
-                button.classList.add(
-                    "clicked"
-                );
-
-                setTimeout(() => {
-                    button.classList.remove(
+    $$(
+        ".btn, .contact-btn, .final-btn, .nav-btn"
+    ).forEach(
+        (button) => {
+            button.addEventListener(
+                "click",
+                () => {
+                    button.classList.add(
                         "clicked"
                     );
-                }, 250);
+
+                    setTimeout(
+                        () => {
+                            button.classList.remove(
+                                "clicked"
+                            );
+                        },
+                        250
+                    );
+                }
+            );
+        }
+    );
+
+    // ==================================================
+    // CURSOR GLOW
+    // ==================================================
+
+    if (
+        supportsHover &&
+        !prefersReducedMotion
+    ) {
+        const cursorGlow =
+            document.createElement(
+                "div"
+            );
+
+        cursorGlow.className =
+            "cursor-glow";
+
+        document.body.appendChild(
+            cursorGlow
+        );
+
+        document.addEventListener(
+            "mousemove",
+            (event) => {
+                cursorGlow.style.left =
+                    `${event.clientX}px`;
+
+                cursorGlow.style.top =
+                    `${event.clientY}px`;
             }
         );
-    });
+    }
 
     // ==================================================
-    // RESIZE HANDLING
+    // SCROLL PROGRESS
     // ==================================================
 
-    let resizeTimer = null;
+    const progressBar =
+        document.createElement(
+            "div"
+        );
+
+    progressBar.className =
+        "scroll-progress";
+
+    document.body.appendChild(
+        progressBar
+    );
+
+    const updateProgress =
+        () => {
+            const scrollTop =
+                window.scrollY;
+
+            const height =
+                document.documentElement
+                    .scrollHeight -
+                window.innerHeight;
+
+            const progress =
+                height > 0
+                    ? (scrollTop /
+                        height) *
+                    100
+                    : 0;
+
+            progressBar.style.width =
+                `${progress}%`;
+        };
+
+    window.addEventListener(
+        "scroll",
+        updateProgress,
+        { passive: true }
+    );
+
+    updateProgress();
+
+    // ==================================================
+    // PARALLAX BACKGROUND
+    // ==================================================
+
+    const orbs =
+        $$(".orb");
+
+    if (
+        orbs.length &&
+        supportsHover &&
+        !prefersReducedMotion
+    ) {
+        document.addEventListener(
+            "mousemove",
+            (event) => {
+                const x =
+                    (event.clientX /
+                        window.innerWidth -
+                        0.5) *
+                    20;
+
+                const y =
+                    (event.clientY /
+                        window.innerHeight -
+                        0.5) *
+                    20;
+
+                orbs.forEach(
+                    (orb, index) => {
+                        const amount =
+                            index % 2 ===
+                                0
+                                ? 1
+                                : -1;
+
+                        orb.style.marginLeft =
+                            `${x * amount}px`;
+
+                        orb.style.marginTop =
+                            `${y * amount}px`;
+                    }
+                );
+            }
+        );
+    }
+
+    // ==================================================
+    // RESIZE
+    // ==================================================
+
+    let resizeTimer =
+        null;
 
     window.addEventListener(
         "resize",
         () => {
-            clearTimeout(resizeTimer);
+            clearTimeout(
+                resizeTimer
+            );
 
-            resizeTimer = setTimeout(() => {
-                if (
-                    window.innerWidth > 900
-                ) {
-                    closeMobileMenu();
-                }
-            }, 150);
+            resizeTimer =
+                setTimeout(() => {
+                    if (
+                        window.innerWidth >
+                        900
+                    ) {
+                        closeMobileMenu();
+                    }
+                }, 150);
         },
         { passive: true }
     );
@@ -895,7 +1276,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==================================================
 
     console.log(
-        "%c Ali Refaat iCloud ",
+        "%c Ali Refaat ",
         "background:#00e5ff;" +
         "color:#05070d;" +
         "font-size:18px;" +
@@ -904,6 +1285,10 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     console.log(
-        "Portfolio initialized successfully 🚀"
+        "Age: 15"
+    );
+
+    console.log(
+        "Software & Programming Portfolio initialized 🚀"
     );
 });
