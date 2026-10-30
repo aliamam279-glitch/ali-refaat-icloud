@@ -1577,18 +1577,30 @@ button {
 
 @media (max-width:750px) {
 
-    .navbar {
+      .navbar {
         top: 8px;
         width: 94%;
         min-height: 62px;
         padding: 8px 12px;
         border-radius: 17px;
+        flex-wrap: wrap;
     }
 
-        .navbar nav {
-            display: none;
-        }
+    .navbar nav {
+        display: flex;
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 16px;
+        white-space: normal;
+        padding: 8px 0 4px;
+    }
 
+    .navbar nav a {
+        font-size: 11px;
+        padding: 5px 2px;
+    }
     .logo {
         font-size: 15px;
     }
@@ -1964,8 +1976,8 @@ button {
     box-shadow:
         0 0 18px rgba(0, 238, 255, 0.10),
         inset 0 0 25px rgba(0, 238, 255, 0.035);
-    animation: cardFloat 4s ease-in-out infinite,
-               neonGlow 3s ease-in-out infinite alternate;
+   animation: codeCardFloat 4s ease-in-out infinite,
+           neonGlow 3s ease-in-out infinite alternate;
 }
 
 .code-label {
