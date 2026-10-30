@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         whatsapp: "201027573851",
 
         facebook:
-            "https://www.facebook.com/share/196kv2DtxH/",
+            https://www.facebook.com/profile.php?id=61593585646514
 
         tiktok:
             "https://www.tiktok.com/@ali_refaat12",
