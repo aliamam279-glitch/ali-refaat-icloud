@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const CONFIG = {
         name: "Ali Refaat",
-        age: 15,
+        age: 16,
+        
 
         whatsapp: "201027573851",
 
@@ -1285,8 +1286,8 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     console.log(
-        "Age: 15"
-    );
+    "Age: 16"
+);
 
     console.log(
         "Software & Programming Portfolio initialized 🚀"
